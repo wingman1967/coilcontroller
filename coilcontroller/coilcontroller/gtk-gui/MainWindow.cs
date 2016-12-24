@@ -7,14 +7,20 @@ public partial class MainWindow
 	private global::Gtk.Fixed fixed1;
 	private global::Gtk.Button button2;
 	private global::Gtk.Button button3;
-	private global::Gtk.Label GtkLabel1;
+	private global::Gtk.Label label1;
+	private global::Gtk.Label lblFrequency;
+	private global::Gtk.Label label4;
+	private global::Gtk.Label label3;
+	private global::Gtk.Label lblCPU;
+	private global::Gtk.Label lblGPU;
+	private global::Gtk.Label GtkLabel2;
 
 	protected virtual void Build ()
 	{
 		global::Stetic.Gui.Initialize (this);
 		// Widget MainWindow
 		this.Name = "MainWindow";
-		this.Title = global::Mono.Unix.Catalog.GetString ("MainWindow");
+		this.Title = global::Mono.Unix.Catalog.GetString ("Tesla Coil Driver/Controller");
 		this.WindowPosition = ((global::Gtk.WindowPosition)(4));
 		// Container child MainWindow.Gtk.Container+ContainerChild
 		this.frame1 = new global::Gtk.Frame ();
@@ -52,18 +58,72 @@ public partial class MainWindow
 		global::Gtk.Fixed.FixedChild w2 = ((global::Gtk.Fixed.FixedChild)(this.fixed1 [this.button3]));
 		w2.X = 45;
 		w2.Y = 127;
+		// Container child fixed1.Gtk.Fixed+FixedChild
+		this.label1 = new global::Gtk.Label ();
+		this.label1.Name = "label1";
+		this.label1.LabelProp = global::Mono.Unix.Catalog.GetString ("<b>ARM Frequency</b>");
+		this.label1.UseMarkup = true;
+		this.fixed1.Add (this.label1);
+		global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.fixed1 [this.label1]));
+		w3.X = 236;
+		w3.Y = 41;
+		// Container child fixed1.Gtk.Fixed+FixedChild
+		this.lblFrequency = new global::Gtk.Label ();
+		this.lblFrequency.WidthRequest = 135;
+		this.lblFrequency.Name = "lblFrequency";
+		this.lblFrequency.LabelProp = global::Mono.Unix.Catalog.GetString ("label2");
+		this.fixed1.Add (this.lblFrequency);
+		global::Gtk.Fixed.FixedChild w4 = ((global::Gtk.Fixed.FixedChild)(this.fixed1 [this.lblFrequency]));
+		w4.X = 237;
+		w4.Y = 67;
+		// Container child fixed1.Gtk.Fixed+FixedChild
+		this.label4 = new global::Gtk.Label ();
+		this.label4.Name = "label4";
+		this.label4.LabelProp = global::Mono.Unix.Catalog.GetString ("<b>GPU Temp</b>");
+		this.label4.UseMarkup = true;
+		this.fixed1.Add (this.label4);
+		global::Gtk.Fixed.FixedChild w5 = ((global::Gtk.Fixed.FixedChild)(this.fixed1 [this.label4]));
+		w5.X = 257;
+		w5.Y = 186;
+		// Container child fixed1.Gtk.Fixed+FixedChild
+		this.label3 = new global::Gtk.Label ();
+		this.label3.Name = "label3";
+		this.label3.LabelProp = global::Mono.Unix.Catalog.GetString ("<b>CPU Temp</b>");
+		this.label3.UseMarkup = true;
+		this.fixed1.Add (this.label3);
+		global::Gtk.Fixed.FixedChild w6 = ((global::Gtk.Fixed.FixedChild)(this.fixed1 [this.label3]));
+		w6.X = 257;
+		w6.Y = 108;
+		// Container child fixed1.Gtk.Fixed+FixedChild
+		this.lblCPU = new global::Gtk.Label ();
+		this.lblCPU.WidthRequest = 135;
+		this.lblCPU.Name = "lblCPU";
+		this.lblCPU.LabelProp = global::Mono.Unix.Catalog.GetString ("label5");
+		this.fixed1.Add (this.lblCPU);
+		global::Gtk.Fixed.FixedChild w7 = ((global::Gtk.Fixed.FixedChild)(this.fixed1 [this.lblCPU]));
+		w7.X = 234;
+		w7.Y = 134;
+		// Container child fixed1.Gtk.Fixed+FixedChild
+		this.lblGPU = new global::Gtk.Label ();
+		this.lblGPU.WidthRequest = 135;
+		this.lblGPU.Name = "lblGPU";
+		this.lblGPU.LabelProp = global::Mono.Unix.Catalog.GetString ("label6");
+		this.fixed1.Add (this.lblGPU);
+		global::Gtk.Fixed.FixedChild w8 = ((global::Gtk.Fixed.FixedChild)(this.fixed1 [this.lblGPU]));
+		w8.X = 234;
+		w8.Y = 211;
 		this.GtkAlignment.Add (this.fixed1);
 		this.frame1.Add (this.GtkAlignment);
-		this.GtkLabel1 = new global::Gtk.Label ();
-		this.GtkLabel1.Name = "GtkLabel1";
-		this.GtkLabel1.LabelProp = global::Mono.Unix.Catalog.GetString ("<b>Coil Controller</b>");
-		this.GtkLabel1.UseMarkup = true;
-		this.frame1.LabelWidget = this.GtkLabel1;
+		this.GtkLabel2 = new global::Gtk.Label ();
+		this.GtkLabel2.Name = "GtkLabel2";
+		this.GtkLabel2.LabelProp = global::Mono.Unix.Catalog.GetString ("<b>Coil Controller</b>");
+		this.GtkLabel2.UseMarkup = true;
+		this.frame1.LabelWidget = this.GtkLabel2;
 		this.Add (this.frame1);
 		if ((this.Child != null)) {
 			this.Child.ShowAll ();
 		}
-		this.DefaultWidth = 400;
+		this.DefaultWidth = 407;
 		this.DefaultHeight = 300;
 		this.Show ();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);

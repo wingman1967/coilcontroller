@@ -8,9 +8,9 @@
     <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <widget-library name="../bin/Release/coilcontroller.exe" internal="true" />
   </import>
-  <widget class="Gtk.Window" id="MainWindow" design-size="400 300">
+  <widget class="Gtk.Window" id="MainWindow" design-size="407 300">
     <property name="MemberName" />
-    <property name="Title" translatable="yes">MainWindow</property>
+    <property name="Title" translatable="yes">Tesla Coil Driver/Controller</property>
     <property name="WindowPosition">CenterOnParent</property>
     <signal name="DeleteEvent" handler="OnDeleteEvent" />
     <child>
@@ -59,12 +59,78 @@
                     <property name="Y">127</property>
                   </packing>
                 </child>
+                <child>
+                  <widget class="Gtk.Label" id="label1">
+                    <property name="MemberName" />
+                    <property name="LabelProp" translatable="yes">&lt;b&gt;ARM Frequency&lt;/b&gt;</property>
+                    <property name="UseMarkup">True</property>
+                  </widget>
+                  <packing>
+                    <property name="X">236</property>
+                    <property name="Y">41</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Label" id="lblFrequency">
+                    <property name="MemberName" />
+                    <property name="WidthRequest">135</property>
+                    <property name="LabelProp" translatable="yes">label2</property>
+                  </widget>
+                  <packing>
+                    <property name="X">237</property>
+                    <property name="Y">67</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Label" id="label4">
+                    <property name="MemberName" />
+                    <property name="LabelProp" translatable="yes">&lt;b&gt;GPU Temp&lt;/b&gt;</property>
+                    <property name="UseMarkup">True</property>
+                  </widget>
+                  <packing>
+                    <property name="X">257</property>
+                    <property name="Y">186</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Label" id="label3">
+                    <property name="MemberName" />
+                    <property name="LabelProp" translatable="yes">&lt;b&gt;CPU Temp&lt;/b&gt;</property>
+                    <property name="UseMarkup">True</property>
+                  </widget>
+                  <packing>
+                    <property name="X">257</property>
+                    <property name="Y">108</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Label" id="lblCPU">
+                    <property name="MemberName" />
+                    <property name="WidthRequest">135</property>
+                    <property name="LabelProp" translatable="yes">label5</property>
+                  </widget>
+                  <packing>
+                    <property name="X">234</property>
+                    <property name="Y">134</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Label" id="lblGPU">
+                    <property name="MemberName" />
+                    <property name="WidthRequest">135</property>
+                    <property name="LabelProp" translatable="yes">label6</property>
+                  </widget>
+                  <packing>
+                    <property name="X">234</property>
+                    <property name="Y">211</property>
+                  </packing>
+                </child>
               </widget>
             </child>
           </widget>
         </child>
         <child>
-          <widget class="Gtk.Label" id="GtkLabel1">
+          <widget class="Gtk.Label" id="GtkLabel2">
             <property name="MemberName" />
             <property name="LabelProp" translatable="yes">&lt;b&gt;Coil Controller&lt;/b&gt;</property>
             <property name="UseMarkup">True</property>
