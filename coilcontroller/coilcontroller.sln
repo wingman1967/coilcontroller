@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "coilcontroller", "coilcontroller\coilcontroller.csproj", "{5E4356F3-63C5-428B-B9CC-2CF0A5477F41}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5E4356F3-63C5-428B-B9CC-2CF0A5477F41}.Debug|x86.ActiveCfg = Debug|x86
+		{5E4356F3-63C5-428B-B9CC-2CF0A5477F41}.Debug|x86.Build.0 = Debug|x86
+		{5E4356F3-63C5-428B-B9CC-2CF0A5477F41}.Release|x86.ActiveCfg = Release|x86
+		{5E4356F3-63C5-428B-B9CC-2CF0A5477F41}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = coilcontroller\coilcontroller.csproj
+	EndGlobalSection
+EndGlobal
