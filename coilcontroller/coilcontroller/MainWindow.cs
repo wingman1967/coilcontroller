@@ -5,6 +5,8 @@ using Gtk;
 
 public partial class MainWindow: Gtk.Window
 {	
+	System.Timers.Timer timer = new System.Timers.Timer(5000); 
+
 	public MainWindow (): base (Gtk.WindowType.Toplevel)
 	{
 		Build ();
@@ -22,9 +24,12 @@ public partial class MainWindow: Gtk.Window
 		button2.ModifyFg(StateType.Normal, fontColor);
 		button3.ModifyFg(StateType.Normal, fontColor);
 
+		lblOperational.Text = "COIL IDLE";
+		lblOperational.ModifyFg (StateType.Normal, colStart);
+
 		UpdatePiInfo ();
 
-		System.Timers.Timer timer = new System.Timers.Timer(5000); 
+		//System.Timers.Timer timer = new System.Timers.Timer(5000); 
 		timer.Elapsed += new ElapsedEventHandler(delegate{timerTick();});	
 		timer.Start();	
 
@@ -38,20 +43,30 @@ public partial class MainWindow: Gtk.Window
 
 	protected void OnButton2Clicked (object sender, EventArgs e)
 	{
+		timer.Stop ();
 		string command = "/home/pi/./turnledon.py";
 		string argss = "";
 		string verb = "";
 		ProcessStartInfo procInfo = new ProcessStartInfo();
+
 		procInfo.WindowStyle = ProcessWindowStyle.Normal;
 		procInfo.UseShellExecute = false;
 		procInfo.FileName = command;  
 		procInfo.Arguments = argss;    
 		procInfo.Verb = verb;         
-		Process.Start(procInfo);  
+		Process.Start(procInfo); 
+		GC.Collect ();
+
+		Gdk.Color colStop = new Gdk.Color();
+		Gdk.Color.Parse("red", ref colStop);
+		lblOperational.Text = "COIL ACTIVE";
+		lblOperational.ModifyFg (StateType.Normal, colStop);
+		timer.Start ();
 	}
 
 	protected void OnButton3Clicked (object sender, EventArgs e)
 	{
+		timer.Stop ();
 		string command = "/home/pi/./turnledoff.py";
 		string argss = "";
 		string verb = "";
@@ -61,7 +76,14 @@ public partial class MainWindow: Gtk.Window
 		procInfo.FileName = command;  
 		procInfo.Arguments = argss;    
 		procInfo.Verb = verb;         
-		Process.Start(procInfo);  
+		Process.Start(procInfo);
+		GC.Collect ();
+
+		Gdk.Color colStart= new Gdk.Color();
+		Gdk.Color.Parse("green", ref colStart);
+		lblOperational.Text = "COIL IDLE";
+		lblOperational.ModifyFg (StateType.Normal, colStart);
+		timer.Start ();
 	}
 
 	private void UpdatePiInfo()
@@ -112,11 +134,17 @@ public partial class MainWindow: Gtk.Window
 		equalLocation = workGPU.IndexOf ("=");
 		lblGPU.Text = workGPU.Substring (equalLocation + 1, workGPU.Length - (equalLocation + 1));
 
+		proc.Dispose ();
+		proc2.Dispose ();
+		proc3.Dispose ();
+		GC.WaitForPendingFinalizers ();
+		GC.Collect ();
 	}
 
 	private void timerTick()
 	{
+		timer.Stop ();
 		UpdatePiInfo ();
-
+		timer.Start ();
 	}
 }

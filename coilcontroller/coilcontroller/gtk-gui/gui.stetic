@@ -125,6 +125,19 @@
                     <property name="Y">211</property>
                   </packing>
                 </child>
+                <child>
+                  <widget class="Gtk.Label" id="lblOperational">
+                    <property name="MemberName" />
+                    <property name="WidthRequest">236</property>
+                    <property name="LabelProp" translatable="yes">&lt;b&gt;COIL IDLE&lt;/b&gt;</property>
+                    <property name="UseMarkup">True</property>
+                    <property name="SingleLineMode">True</property>
+                  </widget>
+                  <packing>
+                    <property name="X">12</property>
+                    <property name="Y">12</property>
+                  </packing>
+                </child>
               </widget>
             </child>
           </widget>

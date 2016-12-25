@@ -13,6 +13,7 @@ public partial class MainWindow
 	private global::Gtk.Label label3;
 	private global::Gtk.Label lblCPU;
 	private global::Gtk.Label lblGPU;
+	private global::Gtk.Label lblOperational;
 	private global::Gtk.Label GtkLabel2;
 
 	protected virtual void Build ()
@@ -112,6 +113,17 @@ public partial class MainWindow
 		global::Gtk.Fixed.FixedChild w8 = ((global::Gtk.Fixed.FixedChild)(this.fixed1 [this.lblGPU]));
 		w8.X = 234;
 		w8.Y = 211;
+		// Container child fixed1.Gtk.Fixed+FixedChild
+		this.lblOperational = new global::Gtk.Label ();
+		this.lblOperational.WidthRequest = 236;
+		this.lblOperational.Name = "lblOperational";
+		this.lblOperational.LabelProp = global::Mono.Unix.Catalog.GetString ("<b>COIL IDLE</b>");
+		this.lblOperational.UseMarkup = true;
+		this.lblOperational.SingleLineMode = true;
+		this.fixed1.Add (this.lblOperational);
+		global::Gtk.Fixed.FixedChild w9 = ((global::Gtk.Fixed.FixedChild)(this.fixed1 [this.lblOperational]));
+		w9.X = 12;
+		w9.Y = 12;
 		this.GtkAlignment.Add (this.fixed1);
 		this.frame1.Add (this.GtkAlignment);
 		this.GtkLabel2 = new global::Gtk.Label ();
